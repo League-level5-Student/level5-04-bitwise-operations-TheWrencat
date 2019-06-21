@@ -1,12 +1,13 @@
 package _03_Printing_Binary;
 
 public class BinaryPrinter {
-	// Complete the methods below so they print the passed in parameter in binary.
+	static // Complete the methods below so they print the passed in parameter in binary.
 	// Don't be afraid to use the methods that are already complete to finish the
 	// others.
 	// Create a main method to test your methods.
+	BinaryPrinter bp = new BinaryPrinter();
 
-	public void printByteBinary(byte b) {
+	public String printByteBinary(byte b) {
 		String print = "";
 		print += (b & 128) >> 7;
 		print += (b & 64) >> 6;
@@ -17,47 +18,46 @@ public class BinaryPrinter {
 		print += (b & 2) >> 1;
 		print += (b & 1);
 
-		System.out.println(b + " in binary is " + print);
+		return print;
 	}
 
-	public void printShortBinary(short s) {
+	public String printShortBinary(short s) {
+
+		byte top = (byte)((s & 0xFF00)>>8);
+		byte bottom = (byte)(s & 0x00FF);
 		String print = "";
-
-		print += (s & 32768) >> 16;
-		print += (s & 16384) >> 14;
-		print += (s & 8192) >> 13;
-		print += (s & 4096) >> 12;
-		print += (s & 2048) >> 11;
-		print += (s & 1024) >> 10;
-		print += (s & 512) >> 9;
-		print += (s & 256) >> 8;
-	
-		print += (s & 128) >> 7;
-		print += (s & 64) >> 6;
-		print += (s & 32) >> 5;
-		print += (s & 16) >> 4;
-		print += (s & 8) >> 3;
-		print += (s & 4) >> 2;
-		print += (s & 2) >> 1;
-		print += (s & 1);
-
-		System.out.println(s + " in binary is " + print);
+		print = "" + bp.printByteBinary(top) + bp.printByteBinary(bottom);
+		return print;
 	}
 
-	public void printIntBinary(int i) {
-
+	public String printIntBinary(int i) {
+		
+		short top = (short)((i & 0xFFFF0000)>>16);
+		short bottom = (short)(i & 0x0000FFFF);
+		String print = "";
+		print = "" + bp.printShortBinary(top) + bp.printShortBinary(bottom);
+		return print;
 	}
 
-	public void printLongBinary(long l) {
+	public String printLongBinary(long l) {
+		int top = (int)(l >>32);
+		int bottom = (int)(l & 0x00000000FFFFFFFF);
+		String print = "";
+		print = "" + bp.printIntBinary(top) + bp.printIntBinary(bottom);
+		return print;
 
 	}
 
 	public static void main(String[] args) {
-		BinaryPrinter bp = new BinaryPrinter();
-		byte by = 2;
-		bp.printByteBinary(by);
+		byte by = 20;
+		System.out.println("Byte:\t" + bp.printByteBinary(by));
 		short sh = 200;
-		bp.printShortBinary(sh);
+		System.out.println("Short:\t" + bp.printShortBinary(sh));
+		int in  = 20000;
+		System.out.println("Int:\t" + bp.printIntBinary(in));
+		long lo = 200000000;
+		System.out.println("Long:\t" + bp.printLongBinary(lo));
+
 
 	}
 }
