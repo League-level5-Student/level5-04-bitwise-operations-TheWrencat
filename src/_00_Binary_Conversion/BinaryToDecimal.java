@@ -20,9 +20,13 @@ public class BinaryToDecimal {
 			3. For every 1 in the binary number, add all of the corresponding values together.
 				eg: 0	1	0	1	1	0
 				    32	16	8	4	2	1
-				    
+				    128 64 32 16 8 4 2 1
 				    16 + 4 + 2 = 22
 				    010110 in binary is equal to 22 in decimal!
+				    
+				    128+64+32+16+1
+				    21
+				    
 		 
 		 */
 	}

@@ -33,3 +33,4 @@ public class DecimalToBinary {
 		 */
 	}
 }
+10001110

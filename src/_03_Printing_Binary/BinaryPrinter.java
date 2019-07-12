@@ -45,18 +45,25 @@ public class BinaryPrinter {
 		String print = "";
 		print = "" + bp.printIntBinary(top) + bp.printIntBinary(bottom);
 		return print;
-
+		//11001110
+		//00100000
+		//11000001
 	}
 
 	public static void main(String[] args) {
-		byte by = 20;
+		byte by = (byte) 100
+				;
 		System.out.println("Byte:\t" + bp.printByteBinary(by));
-		short sh = 200;
-		System.out.println("Short:\t" + bp.printShortBinary(sh));
-		int in  = 20000;
-		System.out.println("Int:\t" + bp.printIntBinary(in));
-		long lo = 200000000;
-		System.out.println("Long:\t" + bp.printLongBinary(lo));
+		byte byt = (byte) 39
+				;
+		System.out.println("Byte:\t" + bp.printByteBinary(byt));
+//		
+		//		short sh = 200;
+//		System.out.println("Short:\t" + bp.printShortBinary(sh));
+//		int in  = 20000;
+//		System.out.println("Int:\t" + bp.printIntBinary(in));
+//		long lo = 200000000;
+//		System.out.println("Long:\t" + bp.printLongBinary(lo));
 
 
 	}
