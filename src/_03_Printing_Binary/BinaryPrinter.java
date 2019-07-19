@@ -45,18 +45,16 @@ public class BinaryPrinter {
 		String print = "";
 		print = "" + bp.printIntBinary(top) + bp.printIntBinary(bottom);
 		return print;
-		//11001110
-		//00100000
-		//11000001
+		//128, 64, 32, 16, 8, 4, 2, 1
 	}
 
 	public static void main(String[] args) {
-		byte by = (byte) 100
-				;
+		byte by = (byte) 210;
 		System.out.println("Byte:\t" + bp.printByteBinary(by));
-		byte byt = (byte) 39
-				;
-		System.out.println("Byte:\t" + bp.printByteBinary(byt));
+		//byte by2 = (byte) 12;
+		//System.out.println("Byte:\t" + bp.printByteBinary(by2));
+		//byte byt = (byte) ((byte)44 << 2);
+		//System.out.println("Byte:\t" + bp.printByteBinary(byt));
 //		
 		//		short sh = 200;
 //		System.out.println("Short:\t" + bp.printShortBinary(sh));
